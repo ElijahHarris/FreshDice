@@ -146,42 +146,49 @@
                     Grid.Column="0"
                     Margin="20,50,0,0"
                     VerticalAlignment="Top"
+                    Click="BuyGoblin_Click"
                     Content="Buy Goblin" />
                 <Button
                     Grid.Row="1"
                     Grid.Column="0"
                     Margin="20,50,0,0"
                     VerticalAlignment="Top"
+                    Click="BuyD4_Click"
                     Content="Buy d4" />
                 <Button
                     Grid.Row="2"
                     Grid.Column="0"
                     Margin="20,50,0,0"
                     VerticalAlignment="Top"
+                    Click="BuyD6_Click"
                     Content="Buy d6" />
                 <Button
                     Grid.Row="3"
                     Grid.Column="0"
                     Margin="20,50,0,0"
                     VerticalAlignment="Top"
+                    Click="BuyD8_Click"
                     Content="Buy d8" />
                 <Button
                     Grid.Row="4"
                     Grid.Column="0"
                     Margin="20,50,0,0"
                     VerticalAlignment="Top"
+                    Click="BuyD10_Click"
                     Content="Buy d10" />
                 <Button
                     Grid.Row="5"
                     Grid.Column="0"
                     Margin="20,50,0,0"
                     VerticalAlignment="Top"
+                    Click="BuyGoblin_Click"
                     Content="Buy d12" />
                 <Button
                     Grid.Row="6"
                     Grid.Column="0"
                     Margin="20,50,0,0"
                     VerticalAlignment="Top"
+                    Click="BuyD20_Click"
                     Content="Buy d20" />
             </Grid>
         </StackPanel>
