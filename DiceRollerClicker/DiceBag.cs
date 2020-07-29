@@ -2,7 +2,7 @@
 
 namespace DiceRollerClicker
 {
-    class DiceBag
+    public class DiceBag
     {
         public Dictionary<int, int> Dice = new Dictionary<int, int>();
         public DiceBag()

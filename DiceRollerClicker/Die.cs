@@ -2,7 +2,7 @@
 
 namespace DiceRollerClicker
 {
-    class Die
+    public class Die
     {
         public int Sides { get; set; }
         public int Roll()

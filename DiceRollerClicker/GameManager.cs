@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace DiceRollerClicker
 {
-    class GameManager
+    public class GameManager
     {
         public DiceBag DiceBag = new DiceBag();
         public int GoblinCount = 0;

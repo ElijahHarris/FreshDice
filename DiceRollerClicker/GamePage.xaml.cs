@@ -10,37 +10,38 @@ namespace DiceRollerClicker
     /// </summary>
     public sealed partial class GamePage : Page
     {
+        public GameManager gm = new GameManager();
         public GamePage()
         {
             this.InitializeComponent();
         }
         public async void BuyGoblin_Click(object sender, RoutedEventArgs e)
         {
-
+            gm.BuyGoblin();
         }
         public async void BuyD4_Click(object sender, RoutedEventArgs e)
         {
-
+            gm.BuyD4();
         }
         public async void BuyD6_Click(object sender, RoutedEventArgs e)
         {
-
+            gm.BuyD6();
         }
         public async void BuyD8_Click(object sender, RoutedEventArgs e)
         {
-
+            gm.BuyD8();
         }
         public async void BuyD10_Click(object sender, RoutedEventArgs e)
         {
-
+            gm.BuyD10();
         }
         public async void BuyD12_Click(object sender, RoutedEventArgs e)
         {
-
+            gm.BuyD12();
         }
         public async void BuyD20_Click(object sender, RoutedEventArgs e)
         {
-
+            gm.BuyD20();
         }
     }
 }
