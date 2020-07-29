@@ -15,6 +15,10 @@ namespace DiceRollerClicker
         {
             this.InitializeComponent();
         }
+        public async void Roll_Click(object sender, RoutedEventArgs e)
+        {
+            gm.Click();
+        }
         public async void BuyGoblin_Click(object sender, RoutedEventArgs e)
         {
             gm.BuyGoblin();
