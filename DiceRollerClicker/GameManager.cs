@@ -20,7 +20,7 @@ namespace DiceRollerClicker
             StoreItemCosts.Add("NewD10", 11 * DefaultDieCost);
             StoreItemCosts.Add("NewD12", 13 * DefaultDieCost);
             StoreItemCosts.Add("NewD20", 21 * DefaultDieCost);
-            DiceBag.Dice.Add(4, 1);
+            DiceBag.Dice[4] = 1;
             doGoblinClicks();
         }
         private async void doGoblinClicks()
