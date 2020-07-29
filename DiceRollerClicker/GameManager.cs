@@ -9,7 +9,7 @@ namespace DiceRollerClicker
         public int GoblinCount = 0;
         public long Score = 0;
         public readonly Dictionary<string, int> StoreItemCosts = new Dictionary<string, int>();
-        const int DefaultDieCost = 0;
+        public const int DefaultDieCost = 0;
 
         public GameManager()
         {

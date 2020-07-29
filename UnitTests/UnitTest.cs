@@ -5,7 +5,7 @@ namespace UnitTests
     [TestClass]
     public class UnitTest1
     {
-        private DiceRollerClicker.GameManager gm = new DiceRollerClicker.GameManager(true);
+        private DiceRollerClicker.GameManager gm = new DiceRollerClicker.GameManager();
         [TestMethod]
         public void TestScoreGoesUpCorrectlyOnRoll()
         {
