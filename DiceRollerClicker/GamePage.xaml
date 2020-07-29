@@ -18,7 +18,7 @@
             Grid.Row="0"
             HorizontalAlignment="Center"
             FontSize="120"
-            Text="Score: XXXXXXXXXX" />
+            Text="{x:Bind Path=gm.Score, Mode=OneWay}" />
 
         <Grid
             Grid.Row="0"
