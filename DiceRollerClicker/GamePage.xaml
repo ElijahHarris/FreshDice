@@ -32,6 +32,7 @@
                 <ColumnDefinition Width="1*" />
                 <ColumnDefinition Width="1*" />
             </Grid.ColumnDefinitions>
+            <!--Dice Boxes-->
             <Rectangle
                 Grid.Row="0"
                 Grid.Column="0"
@@ -80,11 +81,61 @@
                 Fill="#805900"
                 Stroke="#cc8f00"
                 StrokeThickness="5" />
+            <!--Dice Titles-->
+            <TextBlock
+                Grid.Row="0"
+                Grid.Column="0"
+                FontSize="50"
+                Text="0 D4"
+                Margin="0 20 0 0"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"/>
+            <TextBlock
+                Grid.Row="0"
+                Grid.Column="1"
+                FontSize="50"
+                Text="0 D6"
+                Margin="0 20 0 0"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"/>
+            <TextBlock
+                Grid.Row="0"
+                Grid.Column="2"
+                FontSize="50"
+                Text="0 D8"
+                Margin="0 20 0 0"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"/>
+            <TextBlock
+                Grid.Row="1"
+                Grid.Column="0"
+                FontSize="50"
+                Text="0 D10"
+                Margin="0 20 0 0"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"/>
+            <TextBlock
+                Grid.Row="1"
+                Grid.Column="1"
+                FontSize="50"
+                Text="0 D12"
+                Margin="0 20 0 0"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"/>
+            <TextBlock
+                Grid.Row="1"
+                Grid.Column="2"
+                FontSize="50"
+                Text="0 D20"
+                Margin="0 20 0 0"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"/>
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="1*" />
             </Grid.RowDefinitions>
         </Grid>
+        <!--Shop Window-->
         <StackPanel
             Grid.Column="1"
             HorizontalAlignment="Stretch"
@@ -94,6 +145,7 @@
                 Fill="#36332D"
                 Stroke="Black"
                 StrokeThickness="5" />
+            <!--Shop-->
             <Grid
                 Height="880"
                 BorderBrush="Black"
@@ -142,6 +194,8 @@
                     Width="500"
                     Height="100"
                     Fill="#CC8F00" />
+                
+                <!--Shop Buttons-->
                 <Button
                     Grid.Row="0"
                     Grid.Column="0"
@@ -191,6 +245,7 @@
                     VerticalAlignment="Top"
                     Click="BuyD20_Click"
                     Content="Buy d20" />
+                
             </Grid>
         </StackPanel>
 
