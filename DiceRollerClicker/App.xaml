@@ -3,5 +3,13 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:DiceRollerClicker">
-
+    <Application.Resources>
+        <BitmapImage x:Key="Goblin" UriSource="Assets/Imgs/Goblin"/>
+        <BitmapImage x:Key="D4" UriSource="Assets/Imgs/D4"/>
+        <BitmapImage x:Key="D6" UriSource="Assets/Imgs/d6"/>
+        <BitmapImage x:Key="D8" UriSource="Assets/Imgs/d8"/>
+        <BitmapImage x:Key="D10" UriSource="Assets/Imgs/d10"/>
+        <BitmapImage x:Key="D12" UriSource="Assets/Imgs/d12"/>
+        <BitmapImage x:Key="D20" UriSource="Assets/Imgs/d20"/>
+    </Application.Resources>
 </Application>

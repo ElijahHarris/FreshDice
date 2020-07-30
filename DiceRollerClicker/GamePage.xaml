@@ -7,33 +7,53 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     mc:Ignorable="d">
+    <UserControl>
+        <UserControl.Resources>
+            <local:ScoretoStringConverter x:Key="ScoreCon"/>
+        </UserControl.Resources>
+        <Grid Background="#4f3700">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1400" />
+                <ColumnDefinition Width="520" />
+            </Grid.ColumnDefinitions>
 
-    <Grid Background="#4f3700">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1400" />
-            <ColumnDefinition Width="520" />
-        </Grid.ColumnDefinitions>
-
-        <TextBlock
+            <TextBlock
             Grid.Row="0"
             HorizontalAlignment="Center"
             FontSize="120"
             Text="{x:Bind Path=gm.Score, Mode=OneWay}" />
-
-        <Grid
+            
+            <Image
+                Grid.Row="0"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom"
+                Width="250"
+                Height="250"
+                Margin="0 0 0 50"
+                Source="Assets/Imgs/Goblin.png"
+                    />
+            <TextBlock
+                Grid.Row="0"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom"
+                Margin="0 0 0 65"
+                FontSize="70"
+                Text="{x:Bind Path=gm.GoblinCount, Mode=OneWay}"/>
+            
+            <Grid
             Grid.Row="0"
             Width="900"
             Height="600"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             Tapped="Roll_Click">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*" />
-                <ColumnDefinition Width="1*" />
-                <ColumnDefinition Width="1*" />
-            </Grid.ColumnDefinitions>
-            <!--Dice Boxes-->
-            <Rectangle
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <!--Dice Boxes-->
+                <Rectangle
                 Grid.Row="0"
                 Grid.Column="0"
                 Width="250"
@@ -41,7 +61,14 @@
                 Fill="#805900"
                 Stroke="#cc8f00"
                 StrokeThickness="5" />
-            <Rectangle
+                <Image
+                Grid.Row="0"
+                Grid.Column="0"
+                Width="250"
+                Height="250"
+                Source="Assets/Imgs/D4.png"
+                    />
+                <Rectangle
                 Grid.Row="0"
                 Grid.Column="1"
                 Width="250"
@@ -49,7 +76,14 @@
                 Fill="#805900"
                 Stroke="#cc8f00"
                 StrokeThickness="5" />
-            <Rectangle
+                <Image
+                Grid.Row="0"
+                Grid.Column="1"
+                Width="250"
+                Height="250"
+                Source="Assets/Imgs/D6.png"
+                    />
+                <Rectangle
                 Grid.Row="0"
                 Grid.Column="2"
                 Width="250"
@@ -57,7 +91,14 @@
                 Fill="#805900"
                 Stroke="#cc8f00"
                 StrokeThickness="5" />
-            <Rectangle
+                <Image
+                Grid.Row="0"
+                Grid.Column="2"
+                Width="250"
+                Height="250"
+                Source="Assets/Imgs/D8.png"
+                    />
+                <Rectangle
                 Grid.Row="1"
                 Grid.Column="0"
                 Width="250"
@@ -65,7 +106,14 @@
                 Fill="#805900"
                 Stroke="#cc8f00"
                 StrokeThickness="5" />
-            <Rectangle
+                <Image
+                Grid.Row="1"
+                Grid.Column="0"
+                Width="250"
+                Height="250"
+                Source="Assets/Imgs/D10.png"
+                    />
+                <Rectangle
                 Grid.Row="1"
                 Grid.Column="1"
                 Width="250"
@@ -73,7 +121,14 @@
                 Fill="#805900"
                 Stroke="#cc8f00"
                 StrokeThickness="5" />
-            <Rectangle
+                <Image
+                Grid.Row="1"
+                Grid.Column="1"
+                Width="250"
+                Height="250"
+                Source="Assets/Imgs/D12.png"
+                    />
+                <Rectangle
                 Grid.Row="1"
                 Grid.Column="2"
                 Width="250"
@@ -81,175 +136,254 @@
                 Fill="#805900"
                 Stroke="#cc8f00"
                 StrokeThickness="5" />
-            <!--Dice Titles-->
-            <TextBlock
-                Grid.Row="0"
-                Grid.Column="0"
-                FontSize="50"
-                Text="0 D4"
-                Margin="0 20 0 0"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Top"/>
-            <TextBlock
-                Grid.Row="0"
-                Grid.Column="1"
-                FontSize="50"
-                Text="0 D6"
-                Margin="0 20 0 0"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Top"/>
-            <TextBlock
-                Grid.Row="0"
-                Grid.Column="2"
-                FontSize="50"
-                Text="0 D8"
-                Margin="0 20 0 0"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Top"/>
-            <TextBlock
-                Grid.Row="1"
-                Grid.Column="0"
-                FontSize="50"
-                Text="0 D10"
-                Margin="0 20 0 0"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Top"/>
-            <TextBlock
-                Grid.Row="1"
-                Grid.Column="1"
-                FontSize="50"
-                Text="0 D12"
-                Margin="0 20 0 0"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Top"/>
-            <TextBlock
+                <Image
                 Grid.Row="1"
                 Grid.Column="2"
-                FontSize="50"
-                Text="0 D20"
-                Margin="0 20 0 0"
+                Width="250"
+                Height="250"
+                Source="Assets/Imgs/D20.png"
+                    />
+                <!--Dice Titles-->
+                <TextBlock
+                Grid.Row="0"
+                Grid.Column="0"
+                FontSize="70"
+                Text="{x:Bind Path=gm.D4Count, Mode=OneWay}"
+                Margin="0 20 0 20"
                 HorizontalAlignment="Center"
-                VerticalAlignment="Top"/>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="1*" />
-                <RowDefinition Height="1*" />
-            </Grid.RowDefinitions>
-        </Grid>
-        <!--Shop Window-->
-        <StackPanel
-            Grid.Column="1"
-            HorizontalAlignment="Stretch"
-            Background="#36332D">
-            <Rectangle
-                Height="100"
-                Fill="#36332D"
-                Stroke="Black"
-                StrokeThickness="5" />
-            <!--Shop-->
-            <Grid
-                Height="880"
-                BorderBrush="Black"
-                BorderThickness="5">
+                VerticalAlignment="Bottom"/>
+                <TextBlock
+                Grid.Row="0"
+                Grid.Column="1"
+                FontSize="70"
+                Text="{x:Bind Path=gm.D6Count, Mode=OneWay}"
+                Margin="0 20 0 20"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom"/>
+                <TextBlock
+                Grid.Row="0"
+                Grid.Column="2"
+                FontSize="70"
+                Text="{x:Bind Path=gm.D8Count, Mode=OneWay}"
+                Margin="0 20 0 20"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom"/>
+                <TextBlock
+                Grid.Row="1"
+                Grid.Column="0"
+                FontSize="70"
+                Text="{x:Bind Path=gm.D10Count, Mode=OneWay}"
+                Margin="0 20 0 20"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom"/>
+                <TextBlock
+                Grid.Row="1"
+                Grid.Column="1"
+                FontSize="70"
+                Text="{x:Bind Path=gm.D12Count, Mode=OneWay}"
+                Margin="0 20 0 20"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom"/>
+                <TextBlock
+                Grid.Row="1"
+                Grid.Column="2"
+                FontSize="70"
+                Text="{x:Bind Path=gm.D20Count, Mode=OneWay}"
+                Margin="0 20 0 20"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom"/>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1*" />
                     <RowDefinition Height="1*" />
-                    <RowDefinition Height="1*" />
-                    <RowDefinition Height="1*" />
-                    <RowDefinition Height="1*" />
-                    <RowDefinition Height="1*" />
-                    <RowDefinition Height="1*" />
                 </Grid.RowDefinitions>
-                <Rectangle
-                    Grid.Row="0"
-                    Width="500"
-                    Height="100"
-                    Fill="#CC8F00" />
-                <Rectangle
-                    Grid.Row="1"
-                    Width="500"
-                    Height="100"
-                    Fill="#CC8F00" />
-                <Rectangle
-                    Grid.Row="2"
-                    Width="500"
-                    Height="100"
-                    Fill="#CC8F00" />
-                <Rectangle
-                    Grid.Row="3"
-                    Width="500"
-                    Height="100"
-                    Fill="#CC8F00" />
-                <Rectangle
-                    Grid.Row="4"
-                    Width="500"
-                    Height="100"
-                    Fill="#CC8F00" />
-                <Rectangle
-                    Grid.Row="5"
-                    Width="500"
-                    Height="100"
-                    Fill="#CC8F00" />
-                <Rectangle
-                    Grid.Row="6"
-                    Width="500"
-                    Height="100"
-                    Fill="#CC8F00" />
-                
-                <!--Shop Buttons-->
-                <Button
-                    Grid.Row="0"
-                    Grid.Column="0"
-                    Margin="20,50,0,0"
-                    VerticalAlignment="Top"
-                    Click="BuyGoblin_Click"
-                    Content="Buy Goblin" />
-                <Button
-                    Grid.Row="1"
-                    Grid.Column="0"
-                    Margin="20,50,0,0"
-                    VerticalAlignment="Top"
-                    Click="BuyD4_Click"
-                    Content="Buy d4" />
-                <Button
-                    Grid.Row="2"
-                    Grid.Column="0"
-                    Margin="20,50,0,0"
-                    VerticalAlignment="Top"
-                    Click="BuyD6_Click"
-                    Content="Buy d6" />
-                <Button
-                    Grid.Row="3"
-                    Grid.Column="0"
-                    Margin="20,50,0,0"
-                    VerticalAlignment="Top"
-                    Click="BuyD8_Click"
-                    Content="Buy d8" />
-                <Button
-                    Grid.Row="4"
-                    Grid.Column="0"
-                    Margin="20,50,0,0"
-                    VerticalAlignment="Top"
-                    Click="BuyD10_Click"
-                    Content="Buy d10" />
-                <Button
-                    Grid.Row="5"
-                    Grid.Column="0"
-                    Margin="20,50,0,0"
-                    VerticalAlignment="Top"
-                    Click="BuyGoblin_Click"
-                    Content="Buy d12" />
-                <Button
-                    Grid.Row="6"
-                    Grid.Column="0"
-                    Margin="20,50,0,0"
-                    VerticalAlignment="Top"
-                    Click="BuyD20_Click"
-                    Content="Buy d20" />
-                
             </Grid>
-        </StackPanel>
+            <!--Shop Window-->
+            <StackPanel
+            Grid.Column="1"
+            HorizontalAlignment="Stretch"
+            Background="#36332D">
+                <TextBlock
+                    Text="Dice Shop"
+                    FontSize="70"
+                    HorizontalAlignment="Center"/> 
+                <!--Shop-->
+                <Grid
+                Height="880"
+                BorderBrush="Black"
+                BorderThickness="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                    </Grid.RowDefinitions>
+                    <Rectangle
+                    Grid.Row="0"
+                    Width="500"
+                    Height="100"
+                    Fill="#CC8F00" />
+                    <Rectangle
+                    Grid.Row="1"
+                    Width="500"
+                    Height="100"
+                    Fill="#CC8F00" />
+                    <Rectangle
+                    Grid.Row="2"
+                    Width="500"
+                    Height="100"
+                    Fill="#CC8F00" />
+                    <Rectangle
+                    Grid.Row="3"
+                    Width="500"
+                    Height="100"
+                    Fill="#CC8F00" />
+                    <Rectangle
+                    Grid.Row="4"
+                    Width="500"
+                    Height="100"
+                    Fill="#CC8F00" />
+                    <Rectangle
+                    Grid.Row="5"
+                    Width="500"
+                    Height="100"
+                    Fill="#CC8F00" />
+                    <Rectangle
+                    Grid.Row="6"
+                    Width="500"
+                    Height="100"
+                    Fill="#CC8F00" />
+
+                    <!--Shop Buttons-->
+                    <Button
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Width="500"
+                    Height="100"
+                    Click="BuyGoblin_Click"
+                    HorizontalContentAlignment="Left"
+                    Padding="10 0 0 0 "
+                    FontSize="40"
+                    Content="Buy Dice Goblin" />
+                    <Button
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Width="500"
+                    Height="100"
+                    Click="BuyD4_Click"
+                    FontSize="40"
+                    Content="Buy d4" />
+                    <Button
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Width="500"
+                    Height="100"
+                    Click="BuyD6_Click"
+                        FontSize="40"
+                    Content="Buy d6" />
+                    <Button
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Width="500"
+                    Height="100"
+                    Click="BuyD8_Click"
+                        FontSize="40"
+                    Content="Buy d8" />
+                    <Button
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    Width="500"
+                    Height="100"
+                    Click="BuyD10_Click"
+                        FontSize="40"
+                    Content="Buy d10" />
+                    <Button
+                    Grid.Row="5"
+                    Grid.Column="0"
+                    Width="500"
+                    Height="100"
+                    Click="BuyD12_Click"
+                        FontSize="40"
+                    Content="Buy d12" />
+                    <Button
+                    Grid.Row="6"
+                    Grid.Column="0"
+                    Width="500"
+                    Height="100"
+                    Click="BuyD20_Click"
+                        FontSize="40"
+                    Content="Buy d20" />
+                    <!--Cost Lables-->
+                    <TextBlock
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    FontSize="50"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    Margin=" 0 0 50 0"
+                    Text="{x:Bind Path=gm.StoreItemCosts['Goblin']}"
+                        />
+                    <TextBlock
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    FontSize="50"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    Margin=" 0 0 50 0"
+                    Text="{x:Bind Path=gm.StoreItemCosts['NewD4']}"
+                        />
+                    <TextBlock
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    FontSize="50"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    Margin=" 0 0 50 0"
+                    Text="{x:Bind Path=gm.StoreItemCosts['NewD6']}"
+                        />
+                    <TextBlock
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    FontSize="50"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    Margin=" 0 0 50 0"
+                    Text="{x:Bind Path=gm.StoreItemCosts['NewD8']}"
+                        />
+                    <TextBlock
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    FontSize="50"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    Margin=" 0 0 50 0"
+                    Text="{x:Bind Path=gm.StoreItemCosts['NewD10']}"
+                        />
+                    <TextBlock
+                    Grid.Row="5"
+                    Grid.Column="0"
+                    FontSize="50"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    Margin=" 0 0 50 0"
+                    Text="{x:Bind Path=gm.StoreItemCosts['NewD12']}"
+                        />
+                    <TextBlock
+                    Grid.Row="6"
+                    Grid.Column="0"
+                    FontSize="50"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    Margin=" 0 0 50 0"
+                    Text="{x:Bind Path=gm.StoreItemCosts['NewD20']}"
+                        />
+                </Grid>
+            </StackPanel>
 
 
 
-    </Grid>
+        </Grid>
+    </UserControl>
 </Page>
