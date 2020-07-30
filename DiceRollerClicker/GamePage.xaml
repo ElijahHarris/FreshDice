@@ -46,6 +46,7 @@
             Height="600"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
+            Background="#805900"
             Tapped="Roll_Click">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*" />

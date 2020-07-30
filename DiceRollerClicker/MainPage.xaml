@@ -6,11 +6,12 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="#4f3700">
 
     <Grid>
-        <TextBlock  FontSize="120" 
+        <TextBlock  FontSize="180" 
                     HorizontalAlignment="Center" 
+                    Foreground="#cc8f00"
                     Margin="0,122,0,87">Dice Roller Clicker</TextBlock>
 
         <Button HorizontalAlignment="Center" 
@@ -18,7 +19,16 @@
                 Width="500" 
                 FontSize="80"
                 Click="Game"
+                Foreground="#cc8f00"
+                Background="#805900" 
+                Margin="0,540,0,0" 
+                VerticalAlignment="Top"
                 >Start Game</Button>
-
+        <TextBlock
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            Margin="10,0,0,10" 
+            Text="© 2020 PrinciPals of SE"
+            Foreground="Black"/>
     </Grid>
 </Page>
